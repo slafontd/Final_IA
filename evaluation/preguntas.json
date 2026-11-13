@@ -1,0 +1,42 @@
+[
+  {
+    "pregunta": "Consulta la última medición PM2.5 de Tráfico Centro.",
+    "herramienta_esperada": "get_pm25"
+  },
+  {
+    "pregunta": "Consulta el PM2.5 de ITA-CJUS.",
+    "herramienta_esperada": "get_pm25"
+  },
+  {
+    "pregunta": "Clasifica 42 µg/m³ de PM2.5 para Tráfico Centro.",
+    "herramienta_esperada": "predict_category"
+  },
+  {
+    "pregunta": "Clasifica 18 µg/m³ de PM2.5 para ITA-CJUS.",
+    "herramienta_esperada": "predict_category"
+  },
+  {
+    "pregunta": "¿Qué significa PM2.5?",
+    "herramienta_esperada": "RAG"
+  },
+  {
+    "pregunta": "¿Cuáles son las categorías de referencia de PM2.5?",
+    "herramienta_esperada": "RAG"
+  },
+  {
+    "pregunta": "¿Qué limitaciones tiene este modelo?",
+    "herramienta_esperada": "RAG"
+  },
+  {
+    "pregunta": "¿Los resultados son alertas oficiales?",
+    "herramienta_esperada": "RAG"
+  },
+  {
+    "pregunta": "Explica qué pasa con una medición de 60 µg/m³.",
+    "herramienta_esperada": "RAG"
+  },
+  {
+    "pregunta": "Consulta el último dato de la estación Belén.",
+    "herramienta_esperada": "get_pm25"
+  }
+]
