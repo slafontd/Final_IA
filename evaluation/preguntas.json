@@ -1,42 +1,92 @@
 [
   {
-    "pregunta": "Consulta la última medición PM2.5 de Tráfico Centro.",
-    "herramienta_esperada": "get_pm25"
+    "id": 1,
+    "pregunta": "¿Cuál es la última medición disponible de PM2.5 en la estación Parque Biblioteca Fernando Botero?",
+    "herramienta_esperada": "get_pm25",
+    "requiere_contexto_documental": false
   },
   {
-    "pregunta": "Consulta el PM2.5 de ITA-CJUS.",
-    "herramienta_esperada": "get_pm25"
+    "id": 2,
+    "pregunta": "Consulta la última medición de PM2.5 de la estación BEL-USBV.",
+    "herramienta_esperada": "get_pm25",
+    "requiere_contexto_documental": false
   },
   {
-    "pregunta": "Clasifica 42 µg/m³ de PM2.5 para Tráfico Centro.",
-    "herramienta_esperada": "predict_category"
+    "id": 3,
+    "pregunta": "¿Qué categoría corresponde a una concentración de PM2.5 de 25 µg/m³ según la escala documentada?",
+    "herramienta_esperada": "RAG",
+    "requiere_contexto_documental": true
   },
   {
-    "pregunta": "Clasifica 18 µg/m³ de PM2.5 para ITA-CJUS.",
-    "herramienta_esperada": "predict_category"
+    "id": 4,
+    "pregunta": "Predice la categoría de PM2.5 para el día siguiente en la estación Parque Biblioteca Fernando Botero.",
+    "herramienta_esperada": "predict_category",
+    "requiere_contexto_documental": false
   },
   {
-    "pregunta": "¿Qué significa PM2.5?",
-    "herramienta_esperada": "RAG"
+    "id": 5,
+    "pregunta": "¿Qué información necesita el modelo para estimar la categoría de PM2.5 del día siguiente?",
+    "herramienta_esperada": "RAG",
+    "requiere_contexto_documental": true
   },
   {
-    "pregunta": "¿Cuáles son las categorías de referencia de PM2.5?",
-    "herramienta_esperada": "RAG"
+    "id": 6,
+    "pregunta": "Explica qué es el PM2.5 y por qué puede afectar la salud.",
+    "herramienta_esperada": "RAG",
+    "requiere_contexto_documental": true
   },
   {
-    "pregunta": "¿Qué limitaciones tiene este modelo?",
-    "herramienta_esperada": "RAG"
+    "id": 7,
+    "pregunta": "¿Cuáles son las principales fuentes de emisión de PM2.5?",
+    "herramienta_esperada": "RAG",
+    "requiere_contexto_documental": true
   },
   {
-    "pregunta": "¿Los resultados son alertas oficiales?",
-    "herramienta_esperada": "RAG"
+    "id": 8,
+    "pregunta": "¿Qué efectos puede tener la exposición al PM2.5 sobre el sistema respiratorio y cardiovascular?",
+    "herramienta_esperada": "RAG",
+    "requiere_contexto_documental": true
   },
   {
-    "pregunta": "Explica qué pasa con una medición de 60 µg/m³.",
-    "herramienta_esperada": "RAG"
+    "id": 9,
+    "pregunta": "¿Qué significa la categoría 'Aceptable' en la clasificación de PM2.5 utilizada por el proyecto?",
+    "herramienta_esperada": "RAG",
+    "requiere_contexto_documental": true
   },
   {
-    "pregunta": "Consulta el último dato de la estación Belén.",
-    "herramienta_esperada": "get_pm25"
+    "id": 10,
+    "pregunta": "¿Cuál es la diferencia entre una consulta de medición y una predicción de categoría?",
+    "herramienta_esperada": "RAG",
+    "requiere_contexto_documental": true
+  },
+  {
+    "id": 11,
+    "pregunta": "Predice la categoría de PM2.5 para mañana en una estación que no tenga suficientes mediciones históricas.",
+    "herramienta_esperada": "predict_category",
+    "requiere_contexto_documental": false
+  },
+  {
+    "id": 12,
+    "pregunta": "¿La estimación de AIRE IA es un pronóstico oficial o una recomendación médica?",
+    "herramienta_esperada": "RAG",
+    "requiere_contexto_documental": true
+  },
+  {
+    "id": 13,
+    "pregunta": "Consulta la última medición de PM2.5 y explica qué significa su categoría.",
+    "herramienta_esperada": "get_pm25",
+    "requiere_contexto_documental": true
+  },
+  {
+    "id": 14,
+    "pregunta": "¿Qué limitaciones tiene el conjunto de datos utilizado por AIRE IA?",
+    "herramienta_esperada": "RAG",
+    "requiere_contexto_documental": true
+  },
+  {
+    "id": 15,
+    "pregunta": "¿Qué información documental respalda la explicación sobre los efectos del PM2.5 en la salud?",
+    "herramienta_esperada": "RAG",
+    "requiere_contexto_documental": true
   }
 ]

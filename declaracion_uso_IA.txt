@@ -1,0 +1,16 @@
+DECLARACIÓN DE USO DE INTELIGENCIA ARTIFICIAL GENERATIVA
+Proyecto: AIRE IA
+
+Durante el desarrollo del proyecto AIRE IA se utilizaron herramientas de inteligencia artificial generativa como apoyo para la planificación, programación, revisión de código, resolución de errores y elaboración de documentación técnica.
+
+También se integró un modelo de lenguaje mediante la API de Groq para habilitar un agente conversacional dentro de la aplicación. Este agente puede utilizar herramientas para consultar mediciones de PM2.5, solicitar predicciones experimentales de categorías y recuperar información del corpus documental mediante un sistema RAG basado en TF-IDF.
+
+Las herramientas de IA se utilizaron como apoyo al proceso de desarrollo y aprendizaje. El código, la integración de componentes y el funcionamiento de la aplicación fueron revisados y probados durante el trabajo práctico.
+
+Los resultados generados por el modelo predictivo y el agente conversacional son experimentales. No representan pronósticos oficiales, alertas ambientales ni recomendaciones médicas.
+
+La persona responsable del proyecto debe revisar esta declaración y ajustarla para que refleje fielmente las herramientas y el nivel de asistencia de IA que realmente utilizó.
+
+Autor: Santiago Lafont Díaz
+Asignatura: Introducción a la Inteligencia Artificial
+Fecha: 13/11/2026
