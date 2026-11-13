@@ -20,17 +20,15 @@ def ask_agent(question, df, model, rag):
     tools = [
         {"type":"function","function":{"name":"get_pm25","description":"Consulta la última medición disponible en los datos locales para una estación.",
          "parameters":{"type":"object","properties":{"estacion":{"type":"string"}},"required":["estacion"]}}},
-        {"type":"function","function":{"name":"predict_category","description":"Clasifica una medición PM2.5 usando el modelo entrenado del proyecto.",
-         "parameters":{"type":"object","properties":{"estacion":{"type":"string"},"pm25":{"type":"number"},
-          "temperatura":{"type":"number"},"humedad":{"type":"number"},"viento":{"type":"number"}},
-          "required":["estacion","pm25"]}}}
+        {"type":"function","function":{"name":"predict_category","description":"Predice experimentalmente la categoría de PM2.5 del día siguiente para una estación usando el historial local.",
+         "parameters":{"type":"object","properties":{"estacion":{"type":"string"}},"required":["estacion"]}}}
     ]
     messages = [
         {"role":"system","content":SYSTEM + "\n\nCONTEXTO RAG:\n" + context},
         {"role":"user","content":question}
     ]
     response = client.chat.completions.create(
-        model=os.getenv("GROQ_MODEL","openai/gpt-oss-20b"),
+        model=os.getenv("GROQ_MODEL","llama-3.3-70b-versatile"),
         messages=messages, tools=tools, tool_choice="auto", temperature=0.2
     )
     msg = response.choices[0].message
@@ -41,12 +39,12 @@ def ask_agent(question, df, model, rag):
             if call.function.name == "get_pm25":
                 result = get_pm25(df, args["estacion"])
             elif call.function.name == "predict_category":
-                result = predict_category(model, **args)
+                result = predict_category(model, df, args["estacion"])
             else:
                 result = {"error":"Herramienta desconocida"}
             messages.append({"role":"tool","tool_call_id":call.id,"content":json.dumps(result,ensure_ascii=False)})
         response = client.chat.completions.create(
-            model=os.getenv("GROQ_MODEL","openai/gpt-oss-20b"),
+            model=os.getenv("GROQ_MODEL","llama-3.3-70b-versatile"),
             messages=messages, temperature=0.2
         )
         return response.choices[0].message.content
